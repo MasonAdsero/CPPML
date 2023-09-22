@@ -8,8 +8,12 @@ class LinearRegressor{
     public:
         LinearRegressor();
         ~LinearRegressor();
-        void train(vector<vector<int>> input, vector<int> out, float learningRate, int iters);
+        void train(const vector<double>& input, const vector<double>& output, double learningRate, int iters);
+        void train(const vector<vector<double>>& input, const vector<double>& output, double learningRate, int iters);
     private:
+        double slope;
+        double constant;
+        vector<double> predict(const vector<double>& input);
 };
 
 #endif
